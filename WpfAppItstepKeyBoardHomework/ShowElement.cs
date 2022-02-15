@@ -7,7 +7,7 @@ namespace WpfAppItstepKeyBoardHomework
     {
         private void ShowFails() => FailsTextBlock.Text = $"Fails: {countFails}";
 
-        private void ShowQuantityChar() => QuantityTextBlock.Text = $"Quantity: {countEntered} / {TaskArea.Text.Length}";
+        private void ShowQuantityChar() => QuantityTextBlock.Text = $"Quantity: {countEntered} / {charTask.Length}";
 
         private void ShowSpeed()
         {

@@ -16,19 +16,21 @@ namespace WpfAppItstepKeyBoardHomework
             StartButton.IsEnabled = false;
             CheckBoxSensitive.IsEnabled = false;
             SliderDifficulti.IsEnabled = false;
-            EnterArea.IsReadOnly = false;
             taskStarted = true;
 
             countEntered = 0;
             countFails = 0;
             ShowFails();
 
-            TaskArea.Text = GenerateTask();
-            charTask = TaskArea.Text;
+
+            charTask = GenerateTask();
+            TaskText.Text = charTask;
+
+            EnteredText.Text = "";
             EnterArea.Text = "";
+
             SpeedTextBlock.Text = "Speed: 0 chars / min";
 
-            EnterArea.Focus();
             stopwatch.Start();
         }
 
@@ -38,7 +40,6 @@ namespace WpfAppItstepKeyBoardHomework
             StopButton.IsEnabled = false;
             CheckBoxSensitive.IsEnabled = true;
             SliderDifficulti.IsEnabled = true;
-            EnterArea.IsReadOnly = true;
             taskStarted = false;
 
             stopwatch.Stop();

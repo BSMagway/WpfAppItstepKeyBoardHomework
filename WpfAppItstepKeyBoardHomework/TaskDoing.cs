@@ -19,16 +19,24 @@ namespace WpfAppItstepKeyBoardHomework
             {
                 if (e.Key == Key.Space && char.IsWhiteSpace(charTask[countEntered]))
                 {
+                    EnterArea.Text += " ";
                     countEntered++;
+
+                    EnteredText.Text += " ";
+
+                    TaskText.Text = countEntered < charTask.Length ? charTask.Substring(countEntered) : TaskText.Text = "";
+
                     ShowSpeed();
                     ShowQuantityChar();
                 }
-                else if (e.Key == Key.Space)
+                else if (e.Key == Key.Space || e.Key == Key.Back)
                 {
                     countFails++;
                     ShowFails();
                     e.Handled = true;
                 }
+
+
             }
         }
         private void Window_PreviewTextInput(object sender, TextCompositionEventArgs e)
@@ -37,7 +45,13 @@ namespace WpfAppItstepKeyBoardHomework
             {
                 if (charTask[countEntered] == Convert.ToChar(e.Text))
                 {
+                    EnterArea.Text += Convert.ToChar(e.Text);
                     countEntered++;
+                    
+                    EnteredText.Text += Convert.ToChar(e.Text);
+
+                    TaskText.Text = countEntered < charTask.Length ? charTask.Substring(countEntered) : TaskText.Text = "";
+
                     ShowSpeed();
                     ShowQuantityChar();
                 }
@@ -49,14 +63,12 @@ namespace WpfAppItstepKeyBoardHomework
                 }
             }
         }
-        private void EnterArea_TextChanged(object sender, TextChangedEventArgs e)
+        private void Window_PreviewKeyUp(object sender, KeyEventArgs e)
         {
-            if (countEntered == charTask.Length)
+            if (countEntered == charTask.Length && taskStarted)
             {
                 StopButton.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
             }
         }
-
-
     }
 }
