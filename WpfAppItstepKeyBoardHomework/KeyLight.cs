@@ -16,7 +16,6 @@ namespace WpfAppItstepKeyBoardHomework
             }
             catch (KeyNotFoundException)
             {
-                MessageBox.Show("Button not found");
             }
         }
     }

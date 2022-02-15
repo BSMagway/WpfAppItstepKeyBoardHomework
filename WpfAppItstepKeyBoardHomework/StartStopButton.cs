@@ -6,7 +6,7 @@ namespace WpfAppItstepKeyBoardHomework
 
     public partial class MainWindow : Window
     {
-        private string charTask = null;
+        private string charTask = "";
         private bool taskStarted = false;
         Stopwatch stopwatch = new Stopwatch();
 

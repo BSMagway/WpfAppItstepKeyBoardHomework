@@ -174,8 +174,7 @@
                        VerticalAlignment="Bottom"  
                        FontSize="20"
                        Background="LightSkyBlue">               
-             <Run x:Name="EnteredText"  Background="LightGreen"/>
-             <Run x:Name="TaskText" Background="LightSkyBlue"/>
+             <Run x:Name="EnteredText"  Background="LightGreen"/><Run x:Name="TaskText" Background="LightSkyBlue"/>
             </TextBlock>
 
             <TextBlock 

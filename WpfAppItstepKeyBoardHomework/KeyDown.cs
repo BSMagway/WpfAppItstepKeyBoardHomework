@@ -26,11 +26,35 @@ namespace WpfAppItstepKeyBoardHomework
             
             if (e.IsDown)
             {
-                LightOnOff(e.Key, true);
+                if (e.SystemKey == Key.LeftAlt)
+                {
+                    LightOnOff(Key.LeftAlt, true);
+
+                }
+                else if (e.SystemKey == Key.RightAlt)
+                {
+                    LightOnOff(Key.RightAlt, true);
+                }
+                else
+                {
+                    LightOnOff(e.Key, true);
+                }
             }
             else if(e.IsUp)
             {
-                LightOnOff(e.Key, false);
+                if (e.SystemKey == Key.LeftAlt)
+                {
+                    LightOnOff(Key.LeftAlt, false);
+
+                }
+                else if (e.SystemKey == Key.RightAlt)
+                {
+                    LightOnOff(Key.RightAlt, false);
+                }
+                else
+                {
+                    LightOnOff(e.Key, false);
+                }
             }
         }
     }
